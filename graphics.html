@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Graphiscs</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img src="logo.png" alt="logo" height="30" width="30" style="float:left">
+        <center>
+          <a href="home.html">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="movement.html">Movement</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="promotion.html">Promotion</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="castling.html">Castling</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="elites.html">Indian Elites</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="demo.html">Demo</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="contact.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="graphics.html">Graphics</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </center>
+      </nav>
+      <hr>
+    </header>
+    <!-- CANVAS -->
+    <section style="float:left; align:left; width:50%">
+
+          <canvas id="myCanvas" width="500" height="700" style="border:1px solid #d3d3d3;"></canvas>
+
+
+          <script>
+              var c = document.getElementById("myCanvas");
+              var ctx = c.getContext("2d");
+
+              //CIRCLE green
+              ctx.beginPath();
+              ctx.arc(100,100, 50, 0 * Math.PI, 1 * Math.PI, false);
+              //     (x,y,r,sA,eA,counterClockwiseval(true/false))
+              // x,y is used to set center of the circle.
+              ctx.strokeStyle = "#FF0000";//set boundary color.
+              ctx.stroke();//holow region with black boundary.
+              ctx.fillStyle = "green";//default color:black
+              ctx.fill();//solid region rigion with fillStyle color.
+
+              //CIRCLE red
+              ctx.beginPath();
+              ctx.arc(100,100, 50, 0 * Math.PI, 1 * Math.PI, true);
+              ctx.strokeStyle = "#FF0000";
+              ctx.stroke();
+              ctx.fillStyle = "red";
+              ctx.fill();
+
+              //RECTANGLE green
+              ctx.beginPath();
+              //rect() method to draw rectangle
+              ctx.rect(50, 200, 50, 50);//(x,y,width,height)
+              ctx.strokeStyle = "#FF0000";
+              ctx.stroke();
+              ctx.fillStyle = "green";
+              ctx.fill();
+
+              //RECTANGLE green
+              ctx.beginPath();
+              ctx.rect(100, 200, 50, 50);
+              ctx.strokeStyle = "#FF0000";
+              ctx.stroke();
+              ctx.fillStyle = "red";
+              ctx.fill();
+
+              //line
+              ctx.moveTo(50,300);
+              ctx.lineTo(100,350);
+              ctx.stroke();
+
+              //fillText
+              ctx.font = "30px Arial";
+              ctx.fillText("CHESS @2k20",50,400);
+              // (text , startPos(x,y)
+
+              // Create Linear Gradient
+              var grd = ctx.createLinearGradient(0, 0, 170, 0);//define color variation for gradient
+              grd.addColorStop(0, "red");
+              grd.addColorStop(1, "green");
+
+              //fill gradient
+              ctx.fillStyle = grd;
+              ctx.fillRect(50,450,250,170);//define x0,y0,x1,y1 normally starting position of the rect.
+
+          </script>
+          <canvas id="myCanvas2" width="500" height="100" style="border:1px solid #d3d3d3;"></canvas>
+          <script>
+              var c = document.getElementById("myCanvas2");
+              var ctx = c.getContext("2d");
+              // createCircularGradient
+              var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+              grd.addColorStop(0, "red");
+              grd.addColorStop(1, "green");
+
+              // Fill with gradient
+              ctx.fillStyle = grd;
+              ctx.fillRect(10, 10, 150, 100);
+      </script>
+
+
+    </section>
+
+    <!-- SVG -->
+    <section style="float:right; align:right; width:50%">
+      <!-- //circle -->
+      <svg width="100" height="100">
+        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+      Sorry, your browser does not support inline SVG.
+    </svg><br>
+
+      <!-- //round rectangle -->
+      <svg width="400" height="180">
+        <rect x="50" y="20" rx="20" ry="20" width="150" height="150"
+        style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+      Sorry, your browser does not support inline SVG.
+    </svg><br>
+
+      <!-- rectangle -->
+      <svg width="400" height="100">
+        <rect width="400" height="100"
+        style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+      Sorry, your browser does not support inline SVG.
+      </svg>
+
+      <!-- Line -->
+      <svg height="210" width="500">
+      <line x1="0" y1="0" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:2" />
+      Sorry, your browser does not support inline SVG.
+      </svg>
+
+      <!-- Linear Gradient -->
+      <svg height="150" width="400">
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <ellipse cx="200" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+        Sorry, your browser does not support inline SVG.
+      </svg>
+
+      <!-- svg radial-gradient -->
+      <svg height="150" width="500">
+        <defs>
+          <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" style="stop-color:rgb(255,255,255);stop-opacity:0" />
+            <stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+          </radialGradient>
+        </defs>
+        <ellipse cx="200" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+        Sorry, your browser does not support inline SVG.
+      </svg>
+    </section>
+  </body>
+</html>

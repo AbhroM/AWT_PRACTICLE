@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Basic Html Structure.</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img src="logo.png" alt="logo" height="30" width="30" style="float:left">
+        <center>
+          <a href="home.html">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="movement.html">Movement</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="promotion.html">Promotion</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="castling.html">Castling</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="elites.html">Indian Elites</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="demo.html">Demo</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="contact.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="graphics.html">Graphics</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </center>
+      </nav>
+      <hr>
+    </header>
+    <form >
+      First name: <input type="text" name="fname" required><br>
+      Last name: <input type="text" name="lname" required><br>
+      Conatct #:<input type="" name="mob" required><br>
+      Email id:<input type="email" name="mail" required><br>
+      Address:<input type="text" name="add" required><br>
+      Gender:<input type="radio" name="m"><input type="radio" name="f"><br>
+      Where Do you know about us:
+      friends<input type="checkbox" name="" value="friend">
+      social media<input type="checkbox" name="" value="social media">
+      <p>Click the button to get your coordinates.</p>
+
+      <button onclick="getLocation()">Try It</button>
+
+      <p id="demo"></p>
+
+      <script>
+      var x = document.getElementById("demo");
+
+      function getLocation() {
+          if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(showPosition);
+          } else {
+              x.innerHTML = "Geolocation is not supported by this browser.";
+          }
+      }
+
+      function showPosition(position) {
+          x.innerHTML = "Latitude: " + position.coords.latitude +
+          "<br>Longitude: " + position.coords.longitude;
+      }
+      </script>
+
+
+      <input type="submit" value="Submit">
+    </form>
+
+    <footer>
+      <center>
+        <hr>
+        <ul><li><a href="mailto:akjha3314@gmail.com?subject=feedback">email me</a></li></ul>
+      </center>
+    </footer>
+
+  </body>
+</html>
